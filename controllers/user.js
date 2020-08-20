@@ -41,3 +41,14 @@ exports.signin = (req, res) => {
     });
 };
 
+exports.signout = (req, res) => {
+    res.clearCookie("t");
+    res.json({ message: "Signout successful" });
+};
+
+exports.requireSignin = expressJwt({
+    secret: process.env.JWT_SECRET,
+    algorithms: ["HS256"], 
+    userProperty: "auth",
+  });
+
