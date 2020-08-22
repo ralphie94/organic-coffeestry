@@ -6,7 +6,6 @@ import { createProduct } from './apiAdmin';
 import "./AddProduct.css";
 
 const AddProduct = () => {
-    const { user, token } = isAuthenticated();
     const [values, setValues] = useState({
         name: "",
         description: "",
@@ -21,6 +20,7 @@ const AddProduct = () => {
         formData: ""
     });
 
+    const { user, token } = isAuthenticated();
     const {
         name,
         description,
@@ -45,7 +45,26 @@ const AddProduct = () => {
     };
 
     const clickSubmit = event => {
+        event.preventDefault();
+        setValues({ ...values, error: "", loading: true });
 
+        createProduct(user._id, token, formData)
+        .then(data => {
+            if(data.error) {
+                setValues({ ...values, error: data.error })
+            } else {
+                setValues({
+                    values, 
+                    name: "", 
+                    description: "", 
+                    photo: "", 
+                    price: "", 
+                    quantity: "", 
+                    loading: false,
+                    createdProduct: data.name
+                });
+            }
+        })
     };
 
     const newPostForm = () => (
@@ -92,6 +111,7 @@ const AddProduct = () => {
                             type="number" 
                             value={quantity} 
                         />
+                        {showSuccess()}
                         <div className="create-btn-container">
                             <input className="create-btn" type="submit" value="Create Coffee" />
                         </div>
@@ -99,13 +119,31 @@ const AddProduct = () => {
         </div>
     );
 
+    const showError = () => (
+        <div style={{ display: error ? '' : 'none' }}>
+            {error}
+        </div>
+    );
+
+    const showSuccess = () => (
+        <div style={{ display: createdProduct ? '' : 'none' }}>
+            <h2>{`${createdProduct}`} is created!</h2>
+        </div>
+    );
+
+    const showLoading = () =>
+        loading && (
+            <div>
+                <h2>Loading...</h2>
+            </div>
+    );
+
     return (
         <div>
             <div>
                 <div>
-                    {/* {showLoading()}
-                    {showSuccess()}
-                    {showError()} */}
+                    {showLoading()}
+                    {showError()}
                     {newPostForm()}
                 </div>
             </div>

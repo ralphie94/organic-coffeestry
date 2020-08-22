@@ -90,6 +90,11 @@ input[type="number"] {
     text-indent: 10px;
 }
 
+textarea {
+    font-size: 24px;
+    text-indent: 10px;
+}
+
 @media (max-width: 768px) {
     .name-field {
         width: 350px;
