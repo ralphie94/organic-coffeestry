@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { API } from "../config";
+import { Link } from "react-router-dom";
 
 import "./Signup.css"
 
@@ -12,14 +13,14 @@ const Signup = () => {
         success: false
     });
 
-    const { name, email, password } = values
+    const { name, email, password, success, error } = values
 
     const handleChange = name => event => {
         setValues({ ...values, error: false, [name]: event.target.value })
     };
 
     const signup = (user) => {
-        fetch(`${API}/signup`, {
+        return fetch(`${API}/signup`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -37,23 +38,52 @@ const Signup = () => {
 
     const clickSubmit = (event) => {
         event.preventDefault();
-        signup({ name, email, password });
+        setValues({ ...values, error: false })
+        signup({ name, email, password })
+        .then(data => {
+            if(data.error) {
+                setValues({ ...values, error: data.error, success: false })
+            } else {
+                setValues({
+                    ...values,
+                    name: "",
+                    email: "",
+                    password:"",
+                    error: "",
+                    success: true
+                });
+            }
+        });
     };
 
     const signUpForm = () => (
         <form>
             <div className="login-container">
                 <h1 className="register-title">Register</h1>
+                {showError()}
                 <h2 className="username">Username</h2>
-                <input onChange={handleChange("name")} type="text" className="name-register" name="username"></input><br/>
-                <h2 className="password">Password</h2>
-                <input onChange={handleChange("email")} type="email" className="email-box" name="password"></input><br/>
-                <h2 className="email">Email</h2>
-                <input onChange={handleChange("password")} type="password" className="password-register" name="password"></input><br/>
+                <input onChange={handleChange("name")} type="text" className="name-register" name="username" value={name}></input><br/>
+                <h2 className="password">Email</h2>
+                <input onChange={handleChange("email")} type="email" className="email-box" name="email" value={email}></input><br/>
+                <h2 className="email">Password</h2>
+                <input onChange={handleChange("password")} type="password" className="password-register" name="password" value={password}></input><br/>
+                {showSuccess()}
                 <button onClick={clickSubmit} type="submit" className="register-btn" value="Submit">CREATE</button>
             </div>
         </form>
-    )
+    );
+
+    const showError = () => (
+        <div style={{ display: error ? "" : "none" }}>
+            {error}
+        </div>
+    );
+
+    const showSuccess = () => (
+        <div style={{ display: success ? "" : "none" }}>
+            Account created successfully! Please <Link to="/signin">sign in</Link>.
+        </div>
+    );
 
     return (
         <div>
