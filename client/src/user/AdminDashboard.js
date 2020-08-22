@@ -2,6 +2,8 @@ import React from "react";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 
+import "./AdminDashboard.css";
+
 const AdminDashboard = () => {
     const {
         user: { _id, name, email, role }
@@ -49,8 +51,8 @@ const AdminDashboard = () => {
 
     return (
         <div>
-            {`Hello ${name}!`}
-            <div className="row">
+            <h1 className="admin-greet">{`Hello ${name}!`}</h1>
+            <div className="dashboard">
                 <div>{adminLinks()}</div>
                 <div>{adminInfo()}</div>
             </div>
