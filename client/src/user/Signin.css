@@ -1,10 +1,20 @@
-.email-box {
-    width: 592px;
-    height: 50px;
-    border: 1px solid #000000;
+.login-title {
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
 }
 
-.name-register {
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.name-box {
     width: 592px;
     height: 50px;
     background: #FFFFFF;
@@ -12,15 +22,14 @@
     margin-bottom: 1rem;
 }
 
-.password-register {
+.password-box {
     width: 592px;
     height: 50px;
     background: #FFFFFF;
     border: 1px solid #000000;
-    margin-bottom: 1rem;
 }
 
-.register-btn {
+.login-btn {
     width: 216px;
     height: 74px;
     background: #104E3B;
@@ -31,17 +40,30 @@
     margin-bottom: 1rem;
 }
 
-.register-title {
-    font-family: Roboto;
+.register-link {
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
     color: #000000;
 }
 
-.username {
+a:hover {
+    color: rgba(109, 105, 105, 0.781);
+}
+
+.error-msg {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.login-name {
     margin-top: 2rem;
-    margin-right: 33rem;
+    margin-right: 31rem;
     margin-bottom: 1rem;
     font-family: Roboto;
     font-style: normal;
@@ -50,7 +72,18 @@
     color: #000000;
 }
 
-.password {
+.email-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 1rem;
+    margin-right: 33rem;
+    margin-top: 2rem;
+}
+
+.login-password {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -60,41 +93,44 @@
     margin-right: 31rem;
 }
 
-.email {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+/* .login-background {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    left: 0px;
+    background: url("../../images/coffee-cup.jpg");
+} */
+
+input[type="text"] {
     font-size: 24px;
-    color: #000000;
-    margin-bottom: 1rem;
-    margin-right: 33rem;
+    text-indent: 10px;
+}
+
+input[type="password"] {
+    font-size: 24px;
+    text-indent: 10px;
 }
 
 @media (max-width: 768px) {
-    .name-register {
+    .name-box {
         width: 350px;
         height: 50px;
     }
 
-    .password-register {
+    .password-box {
         width: 350px;
         height: 50px;
     }
 
-    .email-box {
-        width: 350px;
-        height: 50px;
-    }
-
-    .username {
-        margin-right: 18rem;
-    }
-
-    .password {
+    .login-name {
         margin-right: 16rem;
     }
 
-    .email {
+    .email-name {
         margin-right: 18rem;
+    }
+
+    .login-password {
+        margin-right: 16rem;
     }
 }

@@ -44,11 +44,11 @@ const Signup = () => {
             <div className="login-container">
                 <h1 className="register-title">Register</h1>
                 {showError()}
-                <h2 className="username">Username</h2>
+                <h2 className="username">Name</h2>
                 <input onChange={handleChange("name")} type="text" className="name-register" name="username" value={name}></input><br/>
-                <h2 className="password">Email</h2>
+                <h2 className="email">Email</h2>
                 <input onChange={handleChange("email")} type="email" className="email-box" name="email" value={email}></input><br/>
-                <h2 className="email">Password</h2>
+                <h2 className="password">Password</h2>
                 <input onChange={handleChange("password")} type="password" className="password-register" name="password" value={password}></input><br/>
                 {showSuccess()}
                 <button onClick={clickSubmit} type="submit" className="register-btn" value="Submit">CREATE</button>
@@ -64,7 +64,7 @@ const Signup = () => {
 
     const showSuccess = () => (
         <div style={{ display: success ? "" : "none" }}>
-            Account created successfully! Please <Link to="/signin">sign in</Link>.
+            Account created successfully! Please <Link to="/signin">login</Link>.
         </div>
     );
 

@@ -16,7 +16,7 @@ class Navbar extends Component {
                     <div className="toolbar_navigation-items">
                         <ul className="nav-links">
                             <li><Link className="link" to="/">Home</Link></li>
-                            <li><Link className="link" to="/signup">Login</Link></li>
+                            <li><Link className="link" to="/signin">Login</Link></li>
                         </ul>
                     </div>
                     <div className="toolbar__toggle-button">

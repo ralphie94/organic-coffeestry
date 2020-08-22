@@ -12,7 +12,7 @@ const sideDrawer = props => {
         <nav className={drawerClasses}>
             <ul>
                 <li><Link className="link" to="/" onClick={props.click}>Home</Link></li>
-                <li><Link className="link" to="/signup" onClick={props.click}>Login</Link></li>
+                <li><Link className="link" to="/signin" onClick={props.click}>Login</Link></li>
             </ul>
         </nav>
     );
