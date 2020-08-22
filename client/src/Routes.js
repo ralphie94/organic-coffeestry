@@ -8,6 +8,7 @@ import SideDrawer from "./SideDrawer";
 import Backdrop from "./Backdrop";
 import AdminRoute from "./auth/AdminRoute";
 import AdminDashboard from "./user/AdminDashboard";
+import AddProduct from "./admin/AddProduct";
 
 class Routes extends Component {
     state = {
@@ -44,6 +45,11 @@ class Routes extends Component {
                             path="/admin/dashboard"
                             exact
                             component={AdminDashboard}
+                        />
+                        <AdminRoute
+                            path="/create/product"
+                            exact
+                            component={AddProduct}
                         />
                     </Switch>
                 </BrowserRouter>
