@@ -6,17 +6,13 @@ import Home from "./home/Home";
 import Navbar from "./home/Navbar";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "./Backdrop";
+import AdminRoute from "./auth/AdminRoute";
+import AdminDashboard from "./user/AdminDashboard";
 
 class Routes extends Component {
     state = {
-        currentUser: null,
         sideDrawerOpen: false
     };
-
-    doSetCurrentUser = user =>
-    this.setState({
-      currentUser: user
-    });
 
     drawerTogglerClickHandler = () => {
         this.setState((prevState) => {
@@ -44,6 +40,11 @@ class Routes extends Component {
                         <Route path="/" exact component={Home} />
                         <Route path="/signin" exact component={Signin} />
                         <Route path="/signup" exact component={Signup} />
+                        <AdminRoute
+                            path="/admin/dashboard"
+                            exact
+                            component={AdminDashboard}
+                        />
                     </Switch>
                 </BrowserRouter>
             </div>

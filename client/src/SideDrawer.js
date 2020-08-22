@@ -14,6 +14,9 @@ const sideDrawer = props => {
             <ul>
                 <li><Link className="link" to="/" onClick={props.click}>Home</Link></li>
                 {
+                    isAuthenticated() && isAuthenticated().user.role === 1 && <li><Link className="link" to="/admin/dashboard" onClick={props.click}>Dashboard</Link></li>
+                }
+                {
                     !isAuthenticated() && <li><Link className="link" to="/signin" onClick={props.click}>Login</Link></li>
                 }
                 {

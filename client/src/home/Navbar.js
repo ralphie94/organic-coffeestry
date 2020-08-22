@@ -18,6 +18,9 @@ class Navbar extends Component {
                         <ul className="nav-links">
                             <li><Link className="link" to="/">Home</Link></li>
                             {
+                                isAuthenticated() && isAuthenticated().user.role === 1 && <li><Link className="link" to="/admin/dashboard">Dashboard</Link></li>
+                            }
+                            {
                                 !isAuthenticated() && <li><Link className="link" to="/signin">Login</Link></li>
                             }
                             {
