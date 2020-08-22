@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import DrawerToggleButton from "../DrawerToggleButton";
+import { signout } from "../auth";
 
 import "./Navbar.css";
 import Logo from "../images/organic-coffeestry.png";
@@ -17,6 +18,19 @@ class Navbar extends Component {
                         <ul className="nav-links">
                             <li><Link className="link" to="/">Home</Link></li>
                             <li><Link className="link" to="/signin">Login</Link></li>
+                            <li>
+                                <span 
+                                    className="link" 
+                                    style={{ cursor: "pointer" }}
+                                    onClick={() => 
+                                        signout(() => {
+                                            this.props.history.push("/");
+                                        })
+                                    }
+                                >
+                                    Logout
+                                </span>
+                            </li>
                         </ul>
                     </div>
                     <div className="toolbar__toggle-button">
@@ -28,4 +42,4 @@ class Navbar extends Component {
     };
 };
 
-export default Navbar;
+export default withRouter(Navbar);

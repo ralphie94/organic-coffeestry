@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { signout } from "./auth";
 
 import "./SideDrawer.css";
 
@@ -13,9 +14,22 @@ const sideDrawer = props => {
             <ul>
                 <li><Link className="link" to="/" onClick={props.click}>Home</Link></li>
                 <li><Link className="link" to="/signin" onClick={props.click}>Login</Link></li>
+                <li>
+                    <span 
+                        className="link" 
+                        style={{ cursor: "pointer" }}
+                        onClick={() => 
+                            signout(() => {
+                                window.location="/";
+                            })
+                        }
+                    >
+                        Logout
+                    </span>
+                </li>
             </ul>
         </nav>
     );
 };
 
-export default sideDrawer;
+export default withRouter(sideDrawer);
