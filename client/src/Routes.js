@@ -9,6 +9,7 @@ import Backdrop from "./Backdrop";
 import AdminRoute from "./auth/AdminRoute";
 import AdminDashboard from "./user/AdminDashboard";
 import AddProduct from "./admin/AddProduct";
+import Product from "./home/Product";
 
 class Routes extends Component {
     state = {
@@ -51,6 +52,7 @@ class Routes extends Component {
                             exact
                             component={AddProduct}
                         />
+                        <Route path="/product/:productId" exact component={Product} />
                     </Switch>
                 </BrowserRouter>
             </div>

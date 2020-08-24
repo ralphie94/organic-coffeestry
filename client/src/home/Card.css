@@ -61,6 +61,11 @@ ul {
     border-radius: 3px;
     font-family: Raleway;
     margin-top: 1rem;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    box-shadow: 1px 1px 1px rgb(182, 179, 179);
 }
 
 @media (max-width: 768px) {

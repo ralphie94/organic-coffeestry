@@ -8,7 +8,9 @@ const Card = ({ product }) => {
     return (
             <ul>
                 <div className="main-coffee">
-                    <ShowImage item={product} url="product" />
+                    <Link to={`/product/${product._id}`}>
+                        <ShowImage item={product} url="product" />
+                    </Link>
                     <li><h3 className="main-coffee-name">{product.name}</h3></li>
                     <li><p className="main-price">${product.price}</p></li>
                     <button className="add-to-cart">Add to cart</button>
