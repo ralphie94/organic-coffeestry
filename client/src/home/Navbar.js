@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import DrawerToggleButton from "../DrawerToggleButton";
 import { signout, isAuthenticated } from "../auth";
+import { itemTotal } from "./cartHelpers";
 
 import "./Navbar.css";
 import Logo from "../images/organic-coffeestry.png";
@@ -17,6 +18,7 @@ class Navbar extends Component {
                     <div className="toolbar_navigation-items">
                         <ul className="nav-links">
                             <li><Link className="link" to="/">Home</Link></li>
+                            <li className="cart-link"><Link className="link" to="/cart">Cart{" "}<sup><small className="cart-badge">{itemTotal()}</small></sup></Link></li>
                             {
                                 isAuthenticated() && isAuthenticated().user.role === 1 && <li><Link className="link" to="/admin/dashboard">Dashboard</Link></li>
                             }
