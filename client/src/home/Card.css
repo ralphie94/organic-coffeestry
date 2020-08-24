@@ -53,6 +53,16 @@ ul {
     margin-top: 5rem;
 }
 
+.add-to-cart {
+    width: 85px;
+    height: 40px;
+    background: white;
+    outline: none;
+    border-radius: 3px;
+    font-family: Raleway;
+    margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
     .coffee-list {
         display: grid;

@@ -12,19 +12,19 @@ const AdminDashboard = () => {
     const adminLinks = () => {
         return (
             <div>
-                <h4>Admin Links</h4>
+                <h4 className="links-header">Admin Links</h4>
                 <ul className="list-group">
-                    <li>
+                    <li className="links">
                         <Link className="nav-link" to="/create/product">
                             Create Product
                         </Link>
                     </li>
-                    <li>
+                    <li className="links">
                         <Link className="nav-link" to="/admin/orders">
                             View Orders
                         </Link>
                     </li>
-                    <li>
+                    <li className="links">
                         <Link className="nav-link" to="/admin/products">
                             Manage Products
                         </Link>
@@ -37,11 +37,11 @@ const AdminDashboard = () => {
     const adminInfo = () => {
         return (
             <div>
-                <h3>User Information</h3>
+                <h3 className="links-header">User Information</h3>
                 <ul>
-                    <li>{name}</li>
-                    <li>{email}</li>
-                    <li>
+                    <li className="links">{name}</li>
+                    <li className="links">{email}</li>
+                    <li className="links">
                         {role === 1 ? "Admin" : "Registered User"}
                     </li>
                 </ul>
@@ -53,8 +53,8 @@ const AdminDashboard = () => {
         <div>
             <h1 className="admin-greet">{`Hello ${name}!`}</h1>
             <div className="dashboard">
-                <div>{adminLinks()}</div>
-                <div>{adminInfo()}</div>
+                <div className="admin-links">{adminLinks()}</div>
+                <div className="admin-info">{adminInfo()}</div>
             </div>
         </div>
     );

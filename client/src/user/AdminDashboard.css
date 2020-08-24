@@ -3,8 +3,43 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    margin-top: 6rem;
 }
 
 .admin-greet {
     text-align: center;
+    font-family: Raleway;
+    margin-top: 2rem;
+}
+
+.admin-links {
+    margin-right: 8rem;
+    border: 2px solid black;
+    width: 13rem;
+    height: 11rem;
+}
+
+.admin-info {
+    border: 2px solid black;
+    width: 13rem;
+    height: 11rem;
+}
+
+.links {
+    padding-bottom: 5px;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.links-header {
+    text-align: center;
+    background: black;
+    color: white;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .admin-links {
+        margin-right: 2rem;
+    }
 }
