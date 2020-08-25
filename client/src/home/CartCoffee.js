@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ShowImage from "./ShowImage";
+import { updateItem } from "./cartHelpers";
 
 const CartCoffee = ({ product, cartUpdate = false }) => {
+    const [count, setCount] = useState(product.count);
+
+    const handleChange = productId => event => {
+        setCount(event.target.value < 1 ? 1 : event.target.value);
+        if(event.target.value >= 1) {
+            updateItem(productId, event.target.value)
+        }
+    };
 
     const showCartUpdateOptions = cartUpdate => {
-        return cartUpdate && <div>increment/decrement</div>
+        return cartUpdate && 
+            <div>
+                <input type="number" className="quantity-field" value={count} onChange={handleChange(product._id)}></input>
+            </div>
     };
 
     return(
