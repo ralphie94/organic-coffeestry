@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ShowImage from "./ShowImage";
-import { updateItem } from "./cartHelpers";
+import { updateItem, removeItem } from "./cartHelpers";
+import { getProducts } from "./apiHome";
 
-const CartCoffee = ({ product, cartUpdate = false }) => {
+const CartCoffee = ({ 
+    product, 
+    cartUpdate = false, 
+    showRemoveProductButton = false, 
+    setRun = f => f, 
+    run = undefined
+}) => {
     const [count, setCount] = useState(product.count);
 
     const handleChange = productId => event => {
+        setRun(!run);
         setCount(event.target.value < 1 ? 1 : event.target.value);
         if(event.target.value >= 1) {
             updateItem(productId, event.target.value)
@@ -20,6 +28,22 @@ const CartCoffee = ({ product, cartUpdate = false }) => {
             </div>
     };
 
+    const showRemoveButton = showRemoveProductButton => {
+        return (
+          showRemoveProductButton && (
+            <button
+              onClick={() => {
+                removeItem(product._id);
+                setRun(!run);
+              }}
+              className="remove-btn"
+            >
+              REMOVE
+            </button>
+          )
+        );
+      };
+
     return(
         <div className="cart-container">
             <ul>
@@ -31,7 +55,7 @@ const CartCoffee = ({ product, cartUpdate = false }) => {
                         </div>
                         <div className="name-remove">
                             <li><h3 className="cart-coffee-name">{product.name}</h3></li>
-                            <li><button className="remove-btn">REMOVE</button></li>
+                            <li>{showRemoveButton(showRemoveProductButton)}</li>
                         </div>
                     </div>
                     <div className="quan-price">
