@@ -1,0 +1,249 @@
+.cart-coffee {
+    width: 106px;
+    height: 137px;
+    margin-left: 3rem;
+}
+
+.cart-coffee-name {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: -8rem;
+    padding-bottom: 40px;
+}
+
+.list-container {
+    margin-top: 5rem;
+}
+
+.cart-price {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 75px;
+    right: 35px;
+    font-size: 20px;
+}
+
+.remove-btn {
+    background: #000000;
+    width: 68px;
+    height: 30px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+hr {
+    width: 1137px;
+    border: 1px solid #000000;
+    margin-top: 13rem;
+}
+
+.img-name-price {
+    display: flex;
+    flex-direction: row;
+}
+
+.name-remove {
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+
+.user-cart-title {
+    position: relative;
+    text-align: center;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    top: 6rem;
+}
+
+.product-cart {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 11rem;
+    position: absolute;
+    margin-left: 13rem;
+}
+
+.total-cart {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: right;
+    margin-top: 11rem;
+    position: absolute;
+    margin-left: 75rem;
+}
+
+.quantity-cart {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: right;
+    margin-top: 11rem;
+    position: absolute;
+    margin-left: 60rem;
+}
+
+.quantity-field {
+    width: 65px;
+    height: 39px;
+    margin-right: 13rem;
+    position: relative;
+    bottom: 80px;
+}
+
+.quan-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.continue-btn {
+    width: 209px;
+    height: 67px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 8rem;
+}
+
+.checkout-btn {
+    width: 180px;
+    height: 67px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #000000;
+    cursor: pointer;
+    margin-right: -9rem;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 18rem;
+    margin-top: 4rem;
+}
+
+.bottom-line {
+    position: relative;
+    margin-left: 24rem;
+}
+
+.your-cart-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+@media (max-width: 768px) {
+    hr {
+        width: 350px;
+        border: 1px solid #000000;
+        margin-top: 7rem;
+        margin-bottom: -3rem;
+    }
+
+    .top-line {
+        margin-left: 0.5rem;
+    }
+
+    .bottom-line {
+        margin-left: 1rem;
+    }
+
+    .product-cart {
+        display: none;
+    }
+
+    .quantity-cart {
+        display: none;
+    }
+
+    .total-cart {
+        display: none;
+    }
+
+    .cart-coffee {
+        width: 75px;
+        height: 100px;
+        margin-left: 1rem;
+    }
+
+    .name-remove {
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .quantity-field {
+        width: 55px;
+        height: 30px;
+        position: relative;
+        margin-top: 1rem;
+        margin-right: 5rem;
+    }
+
+    .cart-coffee-name {
+        font-size: 20px;
+    }
+
+    .remove-btn {
+        width: 56px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .cart-price {
+        position: relative;
+        font-size: 20px;
+        margin-left: -1rem;
+        margin-top: 13px;
+    }
+
+    .cart-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7rem;
+    }
+
+    .continue-btn {
+        margin-left: 17rem;
+        margin-bottom: 2rem;
+        width: 109px;
+        height: 50px;
+    }
+
+    .checkout-btn {
+        width: 109px;
+        height: 50px;
+        font-size: 16px;
+    }
+}

@@ -10,6 +10,7 @@ import AdminRoute from "./auth/AdminRoute";
 import AdminDashboard from "./user/AdminDashboard";
 import AddProduct from "./admin/AddProduct";
 import Product from "./home/Product";
+import Cart from "./home/Cart";
 
 class Routes extends Component {
     state = {
@@ -53,6 +54,7 @@ class Routes extends Component {
                             component={AddProduct}
                         />
                         <Route path="/product/:productId" exact component={Product} />
+                        <Route path="/cart" exact component={Cart} />
                     </Switch>
                 </BrowserRouter>
             </div>

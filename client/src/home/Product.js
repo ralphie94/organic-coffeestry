@@ -55,11 +55,11 @@ const Product = (props) => {
                 <div className="coffee-info">
                     {shouldRedirect(redirect)}
                     <li><h1 className="coffee-name">{product && product.name}</h1></li>
+                    {/* {showStock(product.quantity)} */}
                     <div className="price-cart-btn">
                         <li><p className="coffee-show-price">${product.price}</p></li>
                         <button onClick={addToCart} className="add-to-cart">ADD TO CART</button>
                     </div>
-                    {showStock(product.quantity)}
                     <li><p>{product.description && product.description && product.description.substring(0, 100)}</p></li>
                 </div>
             </ul>
