@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getCart, getTotal } from "./cartHelpers";
-import { getProducts } from "./apiHome";
-import { Link } from "react-router-dom";
+import { getCart } from "./cartHelpers";
+import { isAuthenticated } from "../auth";
+import { Link, withRouter } from "react-router-dom";
 import CartCoffee from "./CartCoffee";
 import TotalPrice from "./TotalPrice";
 
@@ -38,10 +38,20 @@ const Cart = () => {
                     <TotalPrice products={items} />
                     <div className="cart-buttons">
                         <Link to="/"><button className="continue-btn"> CONTINUE SHOPPING</button></Link>
-                        <button className="checkout-btn"> CHECKOUT</button>
+                        {showCheckout()}
                     </div>
                 </div>
             </div>
+        );
+    };
+
+    const showCheckout = () => {
+        return isAuthenticated() ? (
+            <Link to="/checkout"><button className="checkout-btn">Checkout</button></Link>
+        ) : (
+            <Link to="signin">
+                <button className="checkout-btn">Login to checkout</button>
+            </Link>
         );
     };
 
@@ -64,4 +74,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default withRouter(Cart);

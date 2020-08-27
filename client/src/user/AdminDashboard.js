@@ -11,8 +11,8 @@ const AdminDashboard = () => {
 
     const adminLinks = () => {
         return (
-            <div>
-                <h4 className="links-header">Admin Links</h4>
+            <div className="links-group">
+                <h3 className="links-header">Admin Links</h3>
                 <ul className="list-group">
                     <li className="links">
                         <Link className="nav-link" to="/create/product">
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
 
     const adminInfo = () => {
         return (
-            <div>
+            <div className="info-group">
                 <h3 className="links-header">User Information</h3>
                 <ul>
                     <li className="links">{name}</li>

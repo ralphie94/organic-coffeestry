@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { getProducts } from "./apiHome";
-import { isAuthenticated } from "../auth";
-import  { Link } from "react-router-dom";
+import React from "react";
 
 const TotalPrice = ({ products }) => {
     const getTotal = () => {

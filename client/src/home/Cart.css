@@ -19,10 +19,6 @@
     padding-bottom: 40px;
 }
 
-.cart-titles {
-    margin-left: 15rem;
-}
-
 .list-container {
     margin-top: 5rem;
 }
@@ -150,14 +146,14 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-right: 34rem;
+    margin-right: 18rem;
     margin-top: 4rem;
     padding-bottom: 40px;
 }
 
 .bottom-line {
     position: relative;
-    margin-left: 24rem;
+    margin-left: 10rem;
 }
 
 .your-cart-text {
@@ -170,7 +166,7 @@ hr {
 
 .total-price {
     font-family: Raleway;
-    margin-right: 25rem;
+    margin-right: 9rem;
     margin-top: 4rem;
 }
 
@@ -181,6 +177,15 @@ hr {
 }
 
 @media (max-width: 768px) {
+    .cart-container {
+        margin-bottom: -3rem;
+    }
+
+    .cart-coffee {
+        width: 100px;
+        height: 70px;
+    }
+    
     hr {
         width: 350px;
         border: 1px solid #000000;
@@ -208,15 +213,17 @@ hr {
         display: none;
     }
 
-    .cart-coffee {
-        width: 75px;
-        height: 100px;
-        margin-left: 1rem;
-    }
-
     .name-remove {
         margin-left: 2rem;
-        margin-top: 1rem;
+        margin-top: 2rem;
+    }
+
+    .quan-price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: -4rem;
+        margin-top: 2rem;
     }
 
     .quantity-field {
@@ -224,16 +231,22 @@ hr {
         height: 30px;
         position: relative;
         margin-top: 1rem;
-        margin-right: 5rem;
+        margin-right: 2rem;
     }
 
     .cart-coffee-name {
-        font-size: 20px;
+        font-size: 15px;
+    }
+
+    .img-name-price {
+        margin-bottom: -5rem;
+        display: flex;
+        flex-direction: row;
     }
 
     .remove-btn {
-        width: 56px;
-        height: 25px;
+        width: 50px;
+        height: 20px;
         font-size: 10px;
     }
 
@@ -249,11 +262,11 @@ hr {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 7rem;
+        margin-right: 6.5rem;
     }
 
     .continue-btn {
-        margin-left: 17rem;
+        margin-left: 9rem;
         margin-bottom: 2rem;
         width: 109px;
         height: 50px;
@@ -263,5 +276,23 @@ hr {
         width: 109px;
         height: 50px;
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .cart-titles {
+        margin-left: 15rem;
+    }
+
+    .bottom-line {
+        margin-left: 24rem;
+    }
+
+    .cart-buttons {
+        margin-right: 34rem;
+    }
+
+    .total-price {
+        margin-right: 25rem;
     }
 }
