@@ -30,6 +30,16 @@
     font-weight: bold;
 }
 
+.delivery-address {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 1rem;
+    margin-right: 33rem;
+}
+
 @media (max-width: 768px) {
     .pay-btn {
         margin-left: 6.2rem;

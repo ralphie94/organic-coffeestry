@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getCart, emptyCart } from "./cartHelpers";
-import { getBraintreeClientToken, processPayment } from "./apiHome";
+import { getBraintreeClientToken, processPayment, createOrder } from "./apiHome";
 import { isAuthenticated } from "../auth";
 import  { Link } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
@@ -36,6 +36,10 @@ const Checkout = ({ item, url }) => {
         setItems(getCart());
         getToken(userId, token)
     }, [run]);
+
+    const handleAddress = event => {
+        setData({ ...data, address: event.target.value });
+    };
     
     const getTotal = () => {
         return items.reduce((currentValue, nextValue) => {
@@ -53,6 +57,8 @@ const Checkout = ({ item, url }) => {
         );
     };
 
+    // let deliveryAddress = data.address;
+
     const buy = () => {
         setData({ loading: true });
         let nonce;
@@ -67,6 +73,17 @@ const Checkout = ({ item, url }) => {
             }
             processPayment(userId, token, paymentData)
             .then(response => {
+                console.log(response);
+
+                const createOrderData = {
+                    items: items,
+                    transaction_id: response.transaction.id,
+                    amount: response.transaction.amount,
+                    address: data.address
+                }
+
+                createOrder(userId, token, createOrderData)
+                
                 setData({ ...data, success: response.success });
                 emptyCart(() => {
                     console.log("Payment success and empty cart");
@@ -88,6 +105,10 @@ const Checkout = ({ item, url }) => {
         <div onBlur={() => setData({ ...data, error: "" })}>
             {data.clientToken !== null && items.length > 0 ? (
                 <div>
+                    <div>
+                        <h2 className="delivery-address">Delivery Address</h2>
+                        <textarea onChange={handleAddress} value={data.address} />
+                    </div>
                     <DropIn options={{
                             authorization: data.clientToken,
                             paypal: {
