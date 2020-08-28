@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getCart } from "./cartHelpers";
-import { getProducts, getBraintreeClientToken } from "./apiHome";
+import { getBraintreeClientToken, processPayment } from "./apiHome";
 import { isAuthenticated } from "../auth";
 import  { Link } from "react-router-dom";
-import { API } from "../config";
 import DropIn from "braintree-web-drop-in-react";
 
 import "./Checkout.css";
@@ -27,7 +26,7 @@ const Checkout = ({ item, url }) => {
             if(data.error) {
                 setData({ ...data, error: data.error });
             } else {
-                setData({ ...data, clientToken: data.clientToken });
+                setData({ clientToken: data.clientToken });
             }
         });
     };
@@ -57,12 +56,21 @@ const Checkout = ({ item, url }) => {
         let nonce;
         let getNonce = data.instance.requestPaymentMethod()
         .then(data => {
-            console.log(data);
+            // console.log(data);
             nonce = data.nonce;
-            console.log("Send nonce and total to process: ", nonce, getTotal(items));
+            // console.log("Send nonce and total to process: ", nonce, getTotal(items));
+            const paymentData = {
+                paymentMethodNonce: nonce,
+                amount: getTotal(items)
+            }
+            processPayment(userId, token, paymentData)
+            .then(response => {
+                setData({ ...data, success: response.success });
+            })
+            .catch(error => console.log(error));
         })
         .catch(error => {
-            console.log("Dropin error: ", error);
+            // console.log("Dropin error: ", error);
             setData({ ...data, error: error.message });
         });
     };
@@ -86,11 +94,18 @@ const Checkout = ({ item, url }) => {
         </div>
     );
 
+    const showSuccess = success => (
+        <div style={{ display: success ? "" : "none" }}>
+            Thank you! Your payment was successful!
+        </div>
+    );
+
     return (
         <div className="checkout">
             <div className="checkout-forms">
                 {showCheckout()}
             </div>
+            {showSuccess(data.success)}
             {showError(data.error)}
             <h2 className="cart-total">Total: ${getTotal()}</h2>
         </div>
