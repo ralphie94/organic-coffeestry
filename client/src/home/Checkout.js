@@ -7,7 +7,7 @@ import DropIn from "braintree-web-drop-in-react";
 
 import "./Checkout.css";
 
-const Checkout = ({ item, url }) => {
+const Checkout = () => {
     const [data, setData] = useState({
         loading: false,
         success: false,
@@ -57,7 +57,7 @@ const Checkout = ({ item, url }) => {
         );
     };
 
-    // let deliveryAddress = data.address;
+    let deliveryAddress = data.address;
 
     const buy = () => {
         setData({ loading: true });
@@ -79,16 +79,17 @@ const Checkout = ({ item, url }) => {
                     items: items,
                     transaction_id: response.transaction.id,
                     amount: response.transaction.amount,
-                    address: data.address
-                }
+                    address: deliveryAddress
+                };
 
                 createOrder(userId, token, createOrderData)
-                
-                setData({ ...data, success: response.success });
-                emptyCart(() => {
-                    console.log("Payment success and empty cart");
-                    setData({ loading: false });
-                });
+                    .then(response => {
+                        emptyCart(() => {
+                            setRun(!run);
+                            console.log("Payment success and empty cart");
+                            setData({ loading: false, success: true });
+                        });
+                    });
             })
             .catch(error => {
                 console.log(error);

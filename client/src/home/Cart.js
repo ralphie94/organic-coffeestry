@@ -9,7 +9,7 @@ import "./Cart.css";
 
 const Cart = () => {
     const [items, setItems] = useState([]);
-    const [run, setRun] = useState(false)
+    const [run, setRun] = useState(false);
 
     useEffect(() => {
         setItems(getCart());
