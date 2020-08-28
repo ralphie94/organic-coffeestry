@@ -9,6 +9,7 @@ import "./Checkout.css";
 
 const Checkout = ({ item, url }) => {
     const [data, setData] = useState({
+        loading: false,
         success: false,
         clientToken: null,
         error: "",
@@ -53,6 +54,7 @@ const Checkout = ({ item, url }) => {
     };
 
     const buy = () => {
+        setData({ loading: true });
         let nonce;
         let getNonce = data.instance.requestPaymentMethod()
         .then(data => {
@@ -68,9 +70,13 @@ const Checkout = ({ item, url }) => {
                 setData({ ...data, success: response.success });
                 emptyCart(() => {
                     console.log("Payment success and empty cart");
+                    setData({ loading: false });
                 });
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                setData({ loading: false });
+            });
         })
         .catch(error => {
             // console.log("Dropin error: ", error);
@@ -83,8 +89,13 @@ const Checkout = ({ item, url }) => {
             {data.clientToken !== null && items.length > 0 ? (
                 <div>
                     <DropIn options={{
-                        authorization: data.clientToken
-                    }} onInstance={instance => (data.instance = instance)} />
+                            authorization: data.clientToken,
+                            paypal: {
+                                flow: "vault"
+                            }
+                        }} 
+                        onInstance={instance => (data.instance = instance)} 
+                    />
                     <button onClick={buy} className="pay-btn">PAY</button>
                 </div>
             ) : null}
@@ -103,11 +114,16 @@ const Checkout = ({ item, url }) => {
         </div>
     );
 
+    const showLoading = (loading) => (
+        loading && <h2>Loading...</h2>
+    );
+
     return (
         <div className="checkout">
             <div className="checkout-forms">
                 {showCheckout()}
             </div>
+            {showLoading(data.loading)}
             {showSuccess(data.success)}
             {showError(data.error)}
             <h2 className="cart-total">Total: ${getTotal()}</h2>
