@@ -176,6 +176,33 @@ hr {
     align-items: flex-end;
 }
 
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.empty-cart-text {
+    font-family: "Raleway";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.empty-btn {
+    width: 168px;
+    height: 55px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #000000;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
     .cart-container {
         margin-bottom: -3rem;
@@ -277,7 +304,26 @@ hr {
         height: 50px;
         font-size: 16px;
     }
+
+    .empty-cart-text {
+        font-size: 20px;
+    }
+
+    .empty-btn {
+        width: 130px;
+        height: 50px;
+    }
 }
+
+/* @media screen and (max-width: 736px) {
+    .bottom-line {
+        margin-left: 2rem;
+    }
+
+    .cart-buttons {
+        margin-right: 7.5rem;
+    }
+} */
 
 @media screen and (min-width: 1600px) {
     .cart-titles {

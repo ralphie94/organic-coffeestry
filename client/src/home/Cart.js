@@ -56,9 +56,9 @@ const Cart = () => {
     };
 
     const noItemsMessage = () => (
-        <div>
-            <h2>Your cart is empty. Go buy some coffee!</h2>
-            <button>Continue shopping</button>
+        <div className="empty-cart">
+            <h2 className="empty-cart-text">Your cart is empty. Go buy some coffee!</h2>
+            <Link to="/"><button className="empty-btn">Continue shopping</button></Link>
         </div>
     );
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCart } from "./cartHelpers";
+import { getCart, emptyCart } from "./cartHelpers";
 import { getBraintreeClientToken, processPayment } from "./apiHome";
 import { isAuthenticated } from "../auth";
 import  { Link } from "react-router-dom";
@@ -66,6 +66,9 @@ const Checkout = ({ item, url }) => {
             processPayment(userId, token, paymentData)
             .then(response => {
                 setData({ ...data, success: response.success });
+                emptyCart(() => {
+                    console.log("Payment success and empty cart");
+                });
             })
             .catch(error => console.log(error));
         })
