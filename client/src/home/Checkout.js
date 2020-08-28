@@ -3,9 +3,12 @@ import { getCart } from "./cartHelpers";
 import { getProducts, getBraintreeClientToken } from "./apiHome";
 import { isAuthenticated } from "../auth";
 import  { Link } from "react-router-dom";
+import { API } from "../config";
 import DropIn from "braintree-web-drop-in-react";
 
-const Checkout = () => {
+import "./Checkout.css";
+
+const Checkout = ({ item, url }) => {
     const [data, setData] = useState({
         success: false,
         clientToken: null,
@@ -50,27 +53,46 @@ const Checkout = () => {
         );
     };
 
+    const buy = () => {
+        let nonce;
+        let getNonce = data.instance.requestPaymentMethod()
+        .then(data => {
+            console.log(data);
+            nonce = data.nonce;
+            console.log("Send nonce and total to process: ", nonce, getTotal(items));
+        })
+        .catch(error => {
+            console.log("Dropin error: ", error);
+            setData({ ...data, error: error.message });
+        });
+    };
+
     const showDropIn = () => (
-        <div>
+        <div onBlur={() => setData({ ...data, error: "" })}>
             {data.clientToken !== null && items.length > 0 ? (
                 <div>
                     <DropIn options={{
                         authorization: data.clientToken
                     }} onInstance={instance => (data.instance = instance)} />
-                    <button className="checkout-btn">Checkout</button>
+                    <button onClick={buy} className="pay-btn">PAY</button>
                 </div>
             ) : null}
         </div>
     );
 
+    const showError = error => (
+        <div style={{ display: error ? "" : "none" }}>
+            {error}
+        </div>
+    );
+
     return (
-        <div>
-            <div>
+        <div className="checkout">
+            <div className="checkout-forms">
                 {showCheckout()}
             </div>
-            <div>
-                <h2>Total: ${getTotal()}</h2>
-            </div>
+            {showError(data.error)}
+            <h2 className="cart-total">Total: ${getTotal()}</h2>
         </div>
     );
 };

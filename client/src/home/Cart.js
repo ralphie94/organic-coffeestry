@@ -47,7 +47,7 @@ const Cart = () => {
 
     const showCheckout = () => {
         return isAuthenticated() ? (
-            <Link to="/checkout"><button className="checkout-btn">Checkout</button></Link>
+            <Link to="/checkout"><button className="checkout-btn">CHECKOUT</button></Link>
         ) : (
             <Link to="signin">
                 <button className="checkout-btn">Login to checkout</button>

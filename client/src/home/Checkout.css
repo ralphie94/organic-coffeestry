@@ -1,0 +1,41 @@
+.checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-forms {
+    width: 40rem;
+}
+
+.pay-btn {
+    width: 120px;
+    height: 50px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #000000;
+    cursor: pointer;
+    margin-left: 16.2rem;
+    margin-bottom: 1rem;
+}
+
+.cart-total {
+    margin-top: 1rem;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .pay-btn {
+        margin-left: 6.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .checkout-forms {
+        width: 20rem;
+    }
+}
