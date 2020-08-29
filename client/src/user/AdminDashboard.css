@@ -38,6 +38,10 @@
     height: 30px;
 }
 
+.nav-link {
+    padding: -0.5rem 1rem;
+}
+
 @media (max-width: 768px) {
     .dashboard {
         margin-top: 2rem;

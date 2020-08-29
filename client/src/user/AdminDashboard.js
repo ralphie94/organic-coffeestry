@@ -13,7 +13,7 @@ const AdminDashboard = () => {
         return (
             <div className="links-group">
                 <h3 className="links-header">Admin Links</h3>
-                <ul className="list-group">
+                <ul className="admin-links-group">
                     <li className="links">
                         <Link className="nav-link" to="/create/product">
                             Create Product

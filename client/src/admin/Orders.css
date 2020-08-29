@@ -1,0 +1,28 @@
+.list-group {
+    width: 42rem;
+}
+
+.orders-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-order {
+    font-family: "Raleway"
+}
+
+@media (max-width: 768px) {
+    .list-group {
+        width: 23rem;
+    }
+
+    .order-id {
+        font-size: 24px;
+    }
+
+    .total-order {
+        font-size: 24px;
+    }
+}
