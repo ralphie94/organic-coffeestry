@@ -113,7 +113,7 @@ const AddProduct = () => {
                         />
                         {showSuccess()}
                         <div className="create-btn-container">
-                            <input className="create-btn" type="submit" value="Create Coffee" />
+                            <button className="create-btn" type="submit">Create Coffee</button>
                         </div>
             </form>
         </div>

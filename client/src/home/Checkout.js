@@ -76,7 +76,7 @@ const Checkout = () => {
                 console.log(response);
 
                 const createOrderData = {
-                    items: items,
+                    products: items,
                     transaction_id: response.transaction.id,
                     amount: response.transaction.amount,
                     address: deliveryAddress
@@ -86,7 +86,7 @@ const Checkout = () => {
                     .then(response => {
                         emptyCart(() => {
                             setRun(!run);
-                            console.log("Payment success and empty cart");
+                            console.log("Payment success and empty cart", createOrderData);
                             setData({ loading: false, success: true });
                         });
                     });
@@ -108,7 +108,7 @@ const Checkout = () => {
                 <div>
                     <div>
                         <h2 className="delivery-address">Delivery Address</h2>
-                        <textarea onChange={handleAddress} value={data.address} />
+                        <textarea className="delivery-address-box" onChange={handleAddress} value={data.address} />
                     </div>
                     <DropIn options={{
                             authorization: data.clientToken,

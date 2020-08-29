@@ -40,6 +40,11 @@
     margin-right: 33rem;
 }
 
+.delivery-address-box {
+    width: 40rem;
+    height: 5rem;
+}
+
 @media (max-width: 768px) {
     .pay-btn {
         margin-left: 6.2rem;
@@ -47,6 +52,10 @@
     }
 
     .checkout-forms {
+        width: 20rem;
+    }
+
+    .delivery-address-box {
         width: 20rem;
     }
 }
