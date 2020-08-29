@@ -39,9 +39,9 @@ const AdminDashboard = () => {
             <div className="info-group">
                 <h3 className="links-header">User Information</h3>
                 <ul>
-                    <li className="links">{name}</li>
-                    <li className="links">{email}</li>
-                    <li className="links">
+                    <li className="admin-information">{name}</li>
+                    <li className="admin-information">{email}</li>
+                    <li className="admin-information">
                         {role === 1 ? "Admin" : "Registered User"}
                     </li>
                 </ul>

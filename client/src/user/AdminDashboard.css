@@ -27,8 +27,13 @@
 
 .links {
     padding-bottom: 5px;
-    margin-top: 18px;
     text-align: center;
+}
+
+.admin-information {
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: 16px;
 }
 
 .links-header {

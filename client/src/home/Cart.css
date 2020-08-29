@@ -45,7 +45,19 @@
     margin-top: 10px;
 }
 
-hr {
+/* hr {
+    width: 1137px;
+    border: 1px solid #000000;
+    margin-top: 13rem;
+} */
+
+.top-line {
+    width: 1137px;
+    border: 1px solid #000000;
+    margin-top: 13rem;
+}
+
+.bottom-line {
     width: 1137px;
     border: 1px solid #000000;
     margin-top: 13rem;
@@ -213,19 +225,27 @@ hr {
         height: 70px;
     }
     
-    hr {
+    /* hr {
+        width: 350px;
+        border: 1px solid #000000;
+        margin-top: 7rem;
+        margin-bottom: -3rem;
+    } */
+
+    .top-line {
+        margin-left: 0.5rem;
         width: 350px;
         border: 1px solid #000000;
         margin-top: 7rem;
         margin-bottom: -3rem;
     }
 
-    .top-line {
-        margin-left: 0.5rem;
-    }
-
     .bottom-line {
         margin-left: 1rem;
+        width: 350px;
+        border: 1px solid #000000;
+        margin-top: 7rem;
+        margin-bottom: -3rem;
     }
 
     .product-cart {
