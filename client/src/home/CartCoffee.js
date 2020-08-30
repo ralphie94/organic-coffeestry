@@ -54,7 +54,7 @@ const CartCoffee = ({
                             <li><Link to={`/product/${product._id}`}><ShowImage className="cart-coffee" item={product} url="product" /></Link></li>
                         </div>
                         <div className="name-remove">
-                            <li><h3 className="cart-coffee-name">{product.name}</h3></li>
+                            <li><h3 className="cart-coffee-name"><span className="break">{product.name}</span></h3></li>
                             <li>{showRemoveButton(showRemoveProductButton)}</li>
                         </div>
                     </div>
