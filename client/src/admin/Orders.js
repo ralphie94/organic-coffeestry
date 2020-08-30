@@ -35,6 +35,15 @@ const Orders = () => {
         }
     };
 
+    const showInput = (key, value) => (
+        <div>
+            <div>
+                <div>{key}</div>
+            </div>
+            <input type="text" value={value} className="form-control" readOnly/>
+        </div>
+    );
+
     return(
         <div>
             <h1 style={{textAlign: "center", fontFamily: "Raleway"}}>Manage orders here</h1>
@@ -73,6 +82,14 @@ const Orders = () => {
                                 <h3 className="total-order">
                                     Total products in the order: {o.products.length}
                                 </h3>
+                                {o.products.map((p, pIndex) => (
+                                    <div className="mb-4" key={pIndex} style={{padding: "20px", border: "1px solid black"}}>
+                                        {showInput("Product name", p.name)}
+                                        {showInput("Product price", p.price)}
+                                        {showInput("Product total", p.count)}
+                                        {showInput("Product Id", p._id)}
+                                    </div>
+                                ))}
                                 <hr/>
                             </div>
                         );
