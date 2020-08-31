@@ -1,4 +1,4 @@
-.list-group {
+.orders-group {
     width: 42rem;
 }
 
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 768px) {
-    .list-group {
+    .orders-group {
         width: 23rem;
         margin-left: 2px;
     }

@@ -23,6 +23,9 @@ class Navbar extends Component {
                                 isAuthenticated() && isAuthenticated().user.role === 1 && <li><Link className="link" to="/admin/dashboard">Dashboard</Link></li>
                             }
                             {
+                                isAuthenticated() && isAuthenticated().user.role === 0 && <li><Link className="link" to="/user/dashboard">Dashboard</Link></li>
+                            }
+                            {
                                 !isAuthenticated() && <li><Link className="link" to="/signin">Login</Link></li>
                             }
                             {

@@ -7,6 +7,8 @@ import Navbar from "./home/Navbar";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "./Backdrop";
 import AdminRoute from "./auth/AdminRoute";
+import PrivateRoute from "./auth/PrivateRoute"
+import Dashboard from "./user/UserDashboard";
 import AdminDashboard from "./user/AdminDashboard";
 import AddProduct from "./admin/AddProduct";
 import Product from "./home/Product";
@@ -47,6 +49,11 @@ class Routes extends Component {
                         <Route path="/" exact component={Home} />
                         <Route path="/signin" exact component={Signin} />
                         <Route path="/signup" exact component={Signup} />
+                        <PrivateRoute
+                            path="/user/dashboard"
+                            exact
+                            component={Dashboard}
+                        />
                         <AdminRoute
                             path="/admin/dashboard"
                             exact

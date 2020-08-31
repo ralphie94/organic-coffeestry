@@ -98,7 +98,7 @@ const Orders = () => {
                                         Order ID: {o._id}
                                     </span>
                                 </h2>
-                                <ul className="list-group">
+                                <ul className="list-group orders-group">
                                     <li className="list-group-item">
                                         {showStatus(o)}
                                     </li>
