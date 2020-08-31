@@ -15,6 +15,7 @@ import Product from "./home/Product";
 import Cart from "./home/Cart";
 import Checkout from "./home/Checkout";
 import Orders from "./admin/Orders";
+import Profile from "./user/Profile";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 
@@ -71,6 +72,11 @@ class Routes extends Component {
                             path="/admin/orders"
                             exact
                             component={Orders}
+                        />
+                        <PrivateRoute
+                            path="/profile/:userId"
+                            exact
+                            component={Profile}
                         />
                         <AdminRoute
                             path="/admin/products"
