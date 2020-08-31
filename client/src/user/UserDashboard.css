@@ -1,0 +1,17 @@
+.container-fluid {
+    margin-top: 3rem;
+}
+
+.row {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .purchase-history {
+        max-width: 100%;
+    }
+}
