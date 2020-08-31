@@ -14,6 +14,7 @@ import Cart from "./home/Cart";
 import Checkout from "./home/Checkout";
 import Orders from "./admin/Orders";
 import ManageProducts from "./admin/ManageProducts";
+import UpdateProduct from "./admin/UpdateProduct";
 
 class Routes extends Component {
     state = {
@@ -68,6 +69,11 @@ class Routes extends Component {
                             path="/admin/products"
                             exact
                             component={ManageProducts}
+                        />
+                        <AdminRoute
+                            path="/admin/product/update/:productId"
+                            exact
+                            component={UpdateProduct}
                         />
                     </Switch>
                 </BrowserRouter>
