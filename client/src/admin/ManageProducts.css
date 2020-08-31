@@ -1,0 +1,40 @@
+.manage-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-btn {
+    margin-bottom: 10px;
+    width: 130px;
+    height: 50px;
+    background: white;
+    outline: none;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.delete-btn {
+    margin-bottom: 10px;
+    width: 130px;
+    height: 50px;
+    background: black;
+    color: white;
+    outline: none;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+}
