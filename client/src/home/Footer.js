@@ -6,8 +6,14 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-container">
-                <p className="copyright">&copy; Organic Coffeestry 2020</p>
-                <p className="crafted-by">Crafted by Ralphie Celedon</p>
+                <div className="footer-links">
+                    <li><a href="/" className="footer-link home-link">Home</a></li>
+                    <li><a href="mailto:louisybarrajr@gmail.com" className="footer-link">Contact</a></li>
+                </div>
+                <div className="footer-info">
+                    <p className="copyright">&copy; Organic Coffeestry 2020</p>
+                    <p className="crafted-by">Crafted by Ralphie Celedon</p>
+                </div>
             </div>
         </div>
     );

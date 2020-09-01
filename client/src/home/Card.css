@@ -60,7 +60,6 @@ ul {
         grid-template-columns: 1fr 1fr;
         padding: 0px ;
         grid-gap: 50px;
-        padding-bottom: 40px;
     }
 
     .coffee {
