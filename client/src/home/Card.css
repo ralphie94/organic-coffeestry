@@ -4,7 +4,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 8em;
     justify-items: center;
-    padding: 0 11rem;
+    padding: 0 8rem;
     margin-top: 5rem;
 }
 
@@ -66,5 +66,17 @@ ul {
     .coffee {
         width: 130px;
         height: 130px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    .coffee-list {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 8em;
+        justify-items: center;
+        padding: 0 5rem;
+        margin-top: 5rem;
     }
 }

@@ -93,13 +93,15 @@ a:hover {
     margin-right: 31rem;
 }
 
-/* .login-background {
-    position: relative;
-    max-width: 100%;
-    height: 100%;
-    left: 0px;
-    background: url("../../images/coffee-cup.jpg");
-} */
+.background {
+    background-image: url(/static/media/coffee-cup.81ae3f75.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    position: absolute;
+}
 
 input[type="text"] {
     font-size: 24px;
@@ -137,5 +139,10 @@ input[type="password"] {
 
     .login-password {
         margin-right: 16rem;
+    }
+
+    .background {
+        background-image: none;
+        position: relative;
     }
 }

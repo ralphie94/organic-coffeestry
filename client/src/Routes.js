@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from "./user/Signup";
 import Signin from "./user/Signin";
 import Home from "./home/Home";
+import Footer from "./home/Footer";
 import Navbar from "./home/Navbar";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "./Backdrop";
@@ -90,6 +91,7 @@ class Routes extends Component {
                         />
                     </Switch>
                 </BrowserRouter>
+                <Footer />
             </div>
         );
     };

@@ -79,9 +79,9 @@ const Signin = () => {
     };
 
     return (
-        <div>
-            {signUpForm()}
-            {redirectUser()}
+        <div className="background">
+                {signUpForm()}
+                {redirectUser()}
         </div>
     );
 };
