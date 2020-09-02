@@ -94,7 +94,7 @@ a:hover {
 }
 
 .background {
-    background-image: url(/static/media/coffee-cup.81ae3f75.jpg);
+    background-image: url("../images/coffee-cup.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;

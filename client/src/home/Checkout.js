@@ -85,7 +85,7 @@ const Checkout = () => {
                 createOrder(userId, token, createOrderData)
                     .then(response => {
                         emptyCart(() => {
-                            setRun(!run);
+                            // setRun(!run);
                             console.log("Payment success and empty cart", createOrderData);
                             setData({ loading: false, success: true });
                         });
@@ -132,7 +132,8 @@ const Checkout = () => {
 
     const showSuccess = success => (
         <div style={{ display: success ? "" : "none" }}>
-            Thank you! Your payment was successful!
+            Thank you! Your payment was successful!<br/>
+            <Link to="/"><button className="home-btn">HOME</button></Link>
         </div>
     );
 

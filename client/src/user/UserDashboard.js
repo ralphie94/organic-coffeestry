@@ -75,7 +75,7 @@ const Dashboard = () => {
                                                 <h6>
                                                     Purchased date:{" "}
                                                     {moment(
-                                                        p.createdAt
+                                                        h.createdAt
                                                     ).fromNow()}
                                                 </h6>
                                             </div>

@@ -11,7 +11,7 @@ const Footer = () => {
                     <li><a href="mailto:louisybarrajr@gmail.com" className="footer-link">Contact</a></li>
                 </div>
                 <div className="footer-info">
-                    <p className="copyright">&copy; Organic Coffeestry 2020</p>
+                    <p className="copyright">&copy;2020 Organic Coffeestry</p>
                     <p className="crafted-by">Crafted by Ralphie Celedon</p>
                 </div>
             </div>

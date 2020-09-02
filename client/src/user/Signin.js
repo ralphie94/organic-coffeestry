@@ -6,8 +6,8 @@ import "./Signin.css"
 
 const Signin = () => {
     const [values, setValues] = useState({
-        email: "moomoo@moomoo.com",
-        password: "moomoo123",
+        email: "",
+        password: "",
         error: "",
         loading: false,
         redirectToReferrer: false

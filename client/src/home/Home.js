@@ -10,6 +10,7 @@ const Home = () => {
 
     const loadProductsBySell = () => {
         getProducts('sold').then(data => {
+            // console.log("hi");
             if (error) {
                 setError(error);
             } else {
