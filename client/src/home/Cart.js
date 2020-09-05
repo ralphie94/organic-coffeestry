@@ -64,7 +64,7 @@ const Cart = () => {
 
     return (
         <div>
-            <div>
+            <div className="empty-cart-page">
                 {items.length > 0 ? showItems(items) : noItemsMessage()}
             </div>
             <div>

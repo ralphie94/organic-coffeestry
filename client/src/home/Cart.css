@@ -215,6 +215,10 @@
     margin-top: 2rem;
 }
 
+.empty-cart-page {
+    min-height: 55vh;
+}
+
 @media screen and (max-width: 668px) {
     .cart-container {
         margin-bottom: -3rem;
@@ -338,6 +342,10 @@
         white-space: normal;
         width: 70px;
     }
+
+    .empty-cart-page {
+        min-height: 100vh;
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -381,6 +389,10 @@
     }
     .empty-cart-text {
         font-size: 18px;
+    }
+
+    .empty-cart-page {
+        min-height: 51vh;
     }
 }
 
@@ -447,6 +459,10 @@
 
     .total-price {
         margin-right: 8rem;
+    }
+
+    .empty-cart-page {
+        min-height: 23vh;
     }
 }
 
