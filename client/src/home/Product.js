@@ -26,6 +26,7 @@ const Product = (props) => {
     useEffect(() => {
         const productId = props.match.params.productId;
         loadSingleProduct(productId);
+        window.scrollTo(0, 0);
     }, []);
 
     const showStock = quantity => {

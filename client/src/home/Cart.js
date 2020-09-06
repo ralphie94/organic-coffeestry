@@ -13,6 +13,7 @@ const Cart = () => {
 
     useEffect(() => {
         setItems(getCart());
+        window.scrollTo(0, 0);
     }, [run]);
 
     const showItems = items => {

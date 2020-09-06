@@ -74,3 +74,15 @@
         width: 20rem;
     }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .checkout {
+        min-height: 61vh;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    .checkout {
+        min-height: 64vh;
+    }
+}
