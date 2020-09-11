@@ -30,26 +30,26 @@ exports.create = (req, res) => {
         }
         console.log('ORDER IS JUST SAVED >>> ', order);
         const emailData = {
-            to: 'ralphie0319@gmail.com', // admin
+            to: 'ralphie0319@gmail.com', 
             from: 'ralphie0319@gmail.com',
             subject: `A new order is received`,
             html: `
-            <h1>Hey Ralphie, Somebody just made a purchase in your store</h1>
-            <h2>Customer name: ${order.user.name}</h2>
-            <h2>Customer address: ${order.address}</h2>
-            <h2>User's purchase history: ${order.user.history.length} purchases</h2>
-            <h2>User's email: ${order.user.email}</h2>
-            <h2>Total products: ${order.products.length}</h2>
-            <h2>Transaction ID: ${order.transaction_id}</h2>
-            <h2>Order status: ${order.status}</h2>
-            <h2>Product details:</h2>
+            <h3>Hey Ralphie, Somebody just made a purchase in your store</h3>
+            <p>Customer name: ${order.user.name}</p>
+            <p>Customer address: ${order.address}</p>
+            <p>User's purchase history: ${order.user.history.length} purchases</p>
+            <p>User's email: ${order.user.email}</p>
+            <p>Total products: ${order.products.length}</p>
+            <p>Transaction ID: ${order.transaction_id}</p>
+            <p>Order status: ${order.status}</p>
+            <p>Product details:</p>
             <hr />
             ${order.products
                 .map(p => {
                     return `<div>
-                        <h3>Product Name: ${p.name}</h3>
-                        <h3>Product Price: ${p.price}</h3>
-                        <h3>Product Quantity: ${p.count}</h3>
+                        <p>Product Name: ${p.name}</p>
+                        <p>Product Price: ${p.price}</p>
+                        <p>Product Quantity: ${p.count}</p>
                 </div>`;
                 })
                 .join('--------------------')}
@@ -68,22 +68,22 @@ exports.create = (req, res) => {
             from: 'ralphie0319@gmail.com',
             subject: `You order is in process`,
             html: `
-            <h1>Hey ${req.profile.name}, Thank you for shopping with us.</h1>
-            <h2>Total products: ${order.products.length}</h2>
-            <h2>Transaction ID: ${order.transaction_id}</h2>
-            <h2>Order status: ${order.status}</h2>
-            <h2>Product details:</h2>
+            <h3>Hey ${req.profile.name}, Thank you for shopping with us.</h3>
+            <p>Total products: ${order.products.length}</p>
+            <p>Transaction ID: ${order.transaction_id}</p>
+            <p>Order status: ${order.status}</p>
+            <p>Product details:</p>
             <hr />
             ${order.products
                 .map(p => {
                     return `<div>
-                        <h3>Product Name: ${p.name}</h3>
-                        <h3>Product Price: ${p.price}</h3>
-                        <h3>Product Quantity: ${p.count}</h3>
+                        <p>Product Name: ${p.name}</p>
+                        <p>Product Price: ${p.price}</p>
+                        <p>Product Quantity: ${p.count}</p>
                 </div>`;
                 })
                 .join('--------------------')}
-            <h2>Total order cost: ${order.amount}<h2>
+            <p>Total order cost: ${order.amount}<p>
             <p>Thank your for shopping with us.</p>
         `
         };
