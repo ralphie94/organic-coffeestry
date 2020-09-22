@@ -64,7 +64,7 @@ const Signup = () => {
 
     const showSuccess = () => (
         <div style={{ display: success ? "" : "none" }}>
-            Account created successfully! Please <Link to="/signin">login</Link>.
+            Email has been sent. Please follow the instructions to activate your account.
         </div>
     );
 

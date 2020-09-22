@@ -19,6 +19,7 @@ import Orders from "./admin/Orders";
 import Profile from "./user/Profile";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+import Activate from "./user/Activate";
 
 class Routes extends Component {
     state = {
@@ -50,6 +51,7 @@ class Routes extends Component {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/signin" exact component={Signin} />
+                        <Route path="/auth/activate/:token" exact component={Activate} />
                         <Route path="/signup" exact component={Signup} />
                         <PrivateRoute
                             path="/user/dashboard"

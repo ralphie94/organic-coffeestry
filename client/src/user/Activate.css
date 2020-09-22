@@ -1,0 +1,15 @@
+.activate-page {
+    min-height: 64vh;
+}
+
+.activate-btn {
+    width: 180px;
+    height: 67px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #000000;
+    cursor: pointer;
+}
