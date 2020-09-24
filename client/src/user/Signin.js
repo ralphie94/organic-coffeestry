@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth";
+import Google from "./Google";
 
 import "./Signin.css"
 
@@ -49,6 +50,7 @@ const Signin = () => {
                 <input onChange={handleChange("password")} type="password" className="password-box" name="password" value={password}></input><br/>
                 {showLoading()}
                 <button onClick={clickSubmit} type="submit" className="login-btn" value="Submit">SIGN IN</button>
+                <Google />
                 <p className="register-link"><a href="/signup">Don't have an account yet?</a></p>
                 <p className="forgot-link"><a href="/auth/password/forgot">Forgot password?</a></p>
             </div>
