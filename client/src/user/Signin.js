@@ -50,6 +50,7 @@ const Signin = () => {
                 {showLoading()}
                 <button onClick={clickSubmit} type="submit" className="login-btn" value="Submit">SIGN IN</button>
                 <p className="register-link"><a href="/signup">Don't have an account yet?</a></p>
+                <p className="forgot-link"><a href="/auth/password/forgot">Forgot password?</a></p>
             </div>
         </form>
     );

@@ -1,0 +1,25 @@
+.forgot-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.forgot-container {
+    min-height: 60vh;
+    margin-top: 9rem;
+}
+
+.reset-btn {
+    width: 180px;
+    height: 67px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #000000;
+    cursor: pointer;
+    margin-top: 1rem;
+}

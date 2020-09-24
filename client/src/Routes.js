@@ -20,6 +20,8 @@ import Profile from "./user/Profile";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 import Activate from "./user/Activate";
+import Forgot from "./user/Forgot";
+import Reset from "./user/Reset";
 
 class Routes extends Component {
     state = {
@@ -52,6 +54,8 @@ class Routes extends Component {
                         <Route path="/" exact component={Home} />
                         <Route path="/signin" exact component={Signin} />
                         <Route path="/auth/activate/:token" exact component={Activate} />
+                        <Route path="/auth/password/forgot" exact component={Forgot} />
+                        <Route path="/auth/password/reset/:token" exact component={Reset} />
                         <Route path="/signup" exact component={Signup} />
                         <PrivateRoute
                             path="/user/dashboard"

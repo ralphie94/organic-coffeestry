@@ -44,7 +44,12 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    padding-bottom: 30px;
+}
+
+.forgot-link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
 }
 
 a {
