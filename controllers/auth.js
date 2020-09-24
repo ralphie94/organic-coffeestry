@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
+const _ = require("lodash");
 const { errorHandler } = require("../helpers/dbErrorHandler");
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -186,7 +187,7 @@ exports.resetPassword = (req, res) => {
         jwt.verify(resetPasswordLink, process.env.JWT_RESET_PASSWORD, function(err, decoded) {
             if (err) {
                 return res.status(400).json({
-                    error: 'Expired link. Try again'
+                    error: 'Expired link. Try again.'
                 });
             }
 
@@ -207,11 +208,11 @@ exports.resetPassword = (req, res) => {
                 user.save((err, result) => {
                     if (err) {
                         return res.status(400).json({
-                            error: 'Error resetting user password'
+                            error: 'Error resetting user password.'
                         });
                     }
                     res.json({
-                        message: `Great! Now you can login with your new password`
+                        message: `Great! Now you can login with your new password.`
                     });
                 });
             });
