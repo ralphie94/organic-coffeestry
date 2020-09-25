@@ -4,8 +4,8 @@ import axios from 'axios';
 
 import "./Google.css";
 
-const Google = () => {
-    const responseGoogle = response => {
+const Google = ({ informParent = f => f }) => {
+    const responseGoogle = (response, data) => {
         console.log(response.tokenId);
         axios({
             method: 'POST',
@@ -14,7 +14,7 @@ const Google = () => {
         })
             .then(response => {
                 console.log('GOOGLE SIGNIN SUCCESS', response);
-                // informParent(response);
+                informParent(response.data);
             })
             .catch(error => {
                 console.log('GOOGLE SIGNIN ERROR', error.response);
