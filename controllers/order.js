@@ -28,13 +28,13 @@ exports.create = (req, res) => {
                 error: errorHandler(error)
             });
         }
-        console.log('ORDER IS JUST SAVED >>> ', order);
+        // console.log('ORDER IS JUST SAVED >>> ', order);
         const emailData = {
-            to: 'ralphie0319@gmail.com', 
-            from: 'ralphie0319@gmail.com',
+            to: 'louisybarrajr@gmail.com', 
+            from: process.env.EMAIL_FROM,
             subject: `A new order is received`,
             html: `
-            <h3>Hey Ralphie, Somebody just made a purchase in your store</h3>
+            <h5>Hey Louis, somebody just made a purchase in your store.</h5>
             <p>Customer name: ${order.user.name}</p>
             <p>Customer address: ${order.address}</p>
             <p>User's purchase history: ${order.user.history.length} purchases</p>
@@ -53,7 +53,7 @@ exports.create = (req, res) => {
                 </div>`;
                 })
                 .join('--------------------')}
-            <h2>Total order cost: ${order.amount}<h2>
+            <p>Total order cost: ${order.amount}<p>
             <p>Login to your dashboard</a> to see the order in detail.</p>
         `
         };
@@ -65,10 +65,10 @@ exports.create = (req, res) => {
         // email to buyer
         const emailData2 = {
             to: order.user.email,
-            from: 'ralphie0319@gmail.com',
+            from: process.env.EMAIL_FROM,
             subject: `You order is in process`,
             html: `
-            <h3>Hey ${req.profile.name}, Thank you for shopping with us.</h3>
+            <h4>Hey ${req.profile.name}, Thank you for shopping with us.</h4>
             <p>Total products: ${order.products.length}</p>
             <p>Transaction ID: ${order.transaction_id}</p>
             <p>Order status: ${order.status}</p>
