@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@sendgrid/mail": "^7.2.5",
     "body-parser": "^1.19.0",
     "braintree": "^2.24.0",
