@@ -36,10 +36,10 @@ app.use("/api", braintreeRoutes);
 app.use("/api", orderRoutes);
 
 if(process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, '/client/build')));
+    app.use(express.static(path.join(__dirname, 'build')));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
 } else {
     app.get("/", (req, res) => {
@@ -47,7 +47,7 @@ if(process.env.NODE_ENV === "production") {
     });
 }
 
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 3000
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
