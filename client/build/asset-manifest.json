@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41a865e0.chunk.css",
+    "main.js": "/static/js/main.ea1c43d0.chunk.js",
+    "main.js.map": "/static/js/main.ea1c43d0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.f73896eb.chunk.js": "/static/js/2.f73896eb.chunk.js",
+    "static/js/2.f73896eb.chunk.js.map": "/static/js/2.f73896eb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c209ae2a0307c84915cfd9eb1e822f48.js": "/precache-manifest.c209ae2a0307c84915cfd9eb1e822f48.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.41a865e0.chunk.css.map": "/static/css/main.41a865e0.chunk.css.map",
+    "static/js/2.f73896eb.chunk.js.LICENSE.txt": "/static/js/2.f73896eb.chunk.js.LICENSE.txt",
+    "static/media/Signin.css": "/static/media/coffee-cup.81ae3f75.jpg",
+    "static/media/Banner.css": "/static/media/coffee-pour.8f496d0c.jpeg",
+    "static/media/organic-coffeestry.png": "/static/media/organic-coffeestry.a7f0d58d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.f73896eb.chunk.js",
+    "static/css/main.41a865e0.chunk.css",
+    "static/js/main.ea1c43d0.chunk.js"
+  ]
+}
